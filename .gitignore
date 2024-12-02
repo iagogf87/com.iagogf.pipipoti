@@ -1,0 +1,8 @@
+# Ignorar configuraciones del IDE
+.idea/
+.vscode/
+# Ignorar carpetas y archivos innecesarios
+*.log
+*.tmp
+/bin/
+/obj/
