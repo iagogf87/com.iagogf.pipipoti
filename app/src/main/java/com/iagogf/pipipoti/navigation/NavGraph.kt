@@ -7,16 +7,15 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.iagogf.pipipoti.data.repository.UserRepository
-import com.iagogf.pipipoti.ui.MainContent
+import com.iagogf.pipipoti.ui.screens.MainContent
 import com.iagogf.pipipoti.ui.screens.LoginScreen
-import com.iagogf.pipipoti.ui.RegisterScreen
+import com.iagogf.pipipoti.ui.screens.RegisterScreen
+import com.iagogf.pipipoti.ui.screens.BathScreen
 
 @Composable
 fun NavGraph(
     navController: NavHostController,
     paddingValues: PaddingValues,
-    userRepository: UserRepository
 ) {
     NavHost(
         navController = navController,
@@ -26,21 +25,23 @@ fun NavGraph(
             MainContent(
                 modifier = Modifier.padding(paddingValues),
                 onNavigateToLogin = { navController.navigate("login") },
-                onNavigateToRegister = { navController.navigate("register") }
+                onNavigateToRegister = { navController.navigate("register") },
+                onNavigateToBath = { navController.navigate("bath") }
             )
         }
         composable("login") {
             LoginScreen(
-                userRepository = userRepository,
                 onLoginSuccess = { navController.popBackStack() },
                 onNavigateToRegister = { navController.navigate("register") }
             )
         }
         composable("register") {
             RegisterScreen(
-                userRepository = userRepository,
                 onRegisterSuccess = { navController.popBackStack() }
             )
+        }
+        composable("bath") {
+            BathScreen() // Mostrar BathScreen
         }
     }
 }

@@ -1,30 +1,13 @@
 package com.iagogf.pipipoti.data.database
 
-//Administra Room (base de datos)
-
-import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.RoomDatabase
 
+
+//Administra Room (base de datos) y la creamos
+
+//El User es la clase "User" que creamos con el entiti ("tabla") y sus "celdas" / atributos
 @Database(entities = [User::class], version = 1, exportSchema = false)
-abstract class AppDatabase : RoomDatabase() {
-    abstract fun userDao(): UserDao
-
-    companion object {
-        @Volatile
-        private var INSTANCE: AppDatabase? = null
-
-        fun getDatabase(context: Context): AppDatabase {
-            return INSTANCE ?: synchronized(this) {
-                val instance = Room.databaseBuilder(
-                    context.applicationContext,
-                    AppDatabase::class.java,
-                    "app_database"
-                ).build()
-                INSTANCE = instance
-                instance
-            }
-        }
-    }
+abstract class PipipotiDB : RoomDatabase() {
+    abstract fun userDao(): PipipotiUsersDao
 }

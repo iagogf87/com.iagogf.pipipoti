@@ -42,6 +42,7 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.room.common)
     kapt(libs.androidx.room.compiler)
     testImplementation(libs.androidx.room.testing)
 

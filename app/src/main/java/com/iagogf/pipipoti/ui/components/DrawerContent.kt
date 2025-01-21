@@ -1,12 +1,12 @@
 package com.iagogf.pipipoti.ui.components
 
-//Diseño y acciones del menú lateral
-
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+
+//Diseño y acciones del menú lateral
 
 @Composable
 fun DrawerContent(
@@ -15,7 +15,7 @@ fun DrawerContent(
     Surface(
         modifier = Modifier
             .fillMaxHeight()
-            .width(200.dp), // Ajusto el ancho para ocupar la mitad de la pantalla
+            .width(200.dp), // Ajusto el ancho para ocupar el trozo que quiero de la pantalla
         color = MaterialTheme.colorScheme.primary
     ) {
         Column(
@@ -27,7 +27,7 @@ fun DrawerContent(
                 color = MaterialTheme.colorScheme.onPrimary
             )
             Spacer(modifier = Modifier.height(8.dp))
-            Divider(color = MaterialTheme.colorScheme.onPrimary)
+            HorizontalDivider(color = MaterialTheme.colorScheme.onPrimary)
             Spacer(modifier = Modifier.height(8.dp))
             TextButton(onClick = onNavigateToMain) {
                 Text(
