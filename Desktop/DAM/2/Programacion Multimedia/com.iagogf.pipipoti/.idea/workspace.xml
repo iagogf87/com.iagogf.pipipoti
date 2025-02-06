@@ -10,9 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23660450-aada-4722-b5a0-5a9770fd7af1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/database/PipipotiDatabaseModule.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/database/PipipotiEventoDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/di/NetworkModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/di/PipipotiDatabaseModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/network/DogImageResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/network/DogImageService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/repository/DogImageRepository.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/repository/PipipotiEventoRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/domain/usecase/GetDogImageUseCase.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/domain/usecase/GetEventosUseCase.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/domain/usecase/InsertEventoUseCase.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/ui/navigation/AppNavigation.kt" afterDir="false" />
@@ -20,12 +25,16 @@
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/ui/navigation/Screens.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/ui/screens/EventoScreen.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/ui/screens/ResumenScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/ui/viewmodels/DogImageViewModel.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/ui/viewmodels/EventoViewModel.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/res/drawable/caca2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/res/drawable/cp.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/res/drawable/ic_bath.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/res/drawable/ic_caca.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/res/drawable/ic_caca2.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/res/drawable/ic_home.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/res/drawable/ic_pis.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/res/drawable/ic_pis2.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/res/drawable/ic_resumen.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/MainActivity.kt" afterDir="false" />
@@ -40,7 +49,7 @@
       <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/ui/screens/BathScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/ui/screens/BathScreen.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/ui/screens/LoginScreen.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/ui/screens/MainContent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/ui/screens/MainScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/ui/screens/PipiPotiScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/ui/screens/PipiPotiScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/ui/screens/PipiPotiScreen.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/ui/screens/RegisterScreen.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/utils/Estructura.kt" beforeDir="false" afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/utils/Estructura.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/build.gradle.kts" afterDir="false" />
@@ -155,11 +164,11 @@
       <recent name="C:\Users\iagog\Desktop\DAM\2\Programacion Multimedia\com.iagogf.pipipoti\app\src\main\res\drawable" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\iagog\Desktop\DAM\2\Programacion Multimedia\com.iagogf.pipipoti\com.iagogf.pipipoti\app\src\main\java\com\iagogf\pipipoti\data\di" />
       <recent name="C:\Users\iagog\Desktop\DAM\2\Programacion Multimedia\com.iagogf.pipipoti\com.iagogf.pipipoti\app\src\main\res\drawable" />
       <recent name="C:\Users\iagog\Desktop\DAM\2\Programacion Multimedia\com.iagogf.pipipoti\com.iagogf.pipipoti\Resources" />
       <recent name="C:\Users\iagog\Desktop\DAM\2\Programacion Multimedia\com.iagogf.pipipoti\com.iagogf.pipipoti\app\src\main\java\com\iagogf\pipipoti" />
       <recent name="C:\Users\iagog\Desktop\DAM\2\Programacion Multimedia\com.iagogf.pipipoti\app\src\main\java\com\iagogf\pipipoti" />
-      <recent name="C:\Users\iagog\Desktop\DAM\2\Programacion Multimedia\com.iagogf.pipipoti\app\src\main\java\com\iagogf\pipipoti\ui\screens" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.iagogf.pipipoti.ui.navigation" />
@@ -169,9 +178,9 @@
       <recent name="com.iagogf.pipipoti.ui.screens" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager" selected="Android App.app.main">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="com.iagogf.pipipoti.pipipoti.app" />
+      <module name="pipipoti.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -243,6 +252,77 @@
     </configuration>
     <configuration name="app.androidTest" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="pipipoti.app.androidTest" />
+      <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="ALLOW_ASSUME_VERIFIED" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app.main" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="com.iagogf.pipipoti.pipipoti.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
