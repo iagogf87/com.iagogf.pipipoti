@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "pipipoti"
+rootProject.name = "com.iagogf.pipipoti"
 include(":app")
  
