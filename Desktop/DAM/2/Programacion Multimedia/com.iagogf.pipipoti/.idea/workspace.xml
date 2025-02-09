@@ -10,13 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23660450-aada-4722-b5a0-5a9770fd7af1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/database/PipipotiEventoDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/database/DogImageDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/database/EventoDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/database/PipipotiDatabase.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/di/NetworkModule.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/di/PipipotiDatabaseModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/entity/DogImageEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/entity/EventoEntity.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/network/DogImageResponse.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/network/DogImageService.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/repository/DogImageRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/repository/PipipotiEventoRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/repository/EventoRepository.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/domain/usecase/GetDogImageUseCase.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/domain/usecase/GetEventosUseCase.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/domain/usecase/InsertEventoUseCase.kt" afterDir="false" />
@@ -39,8 +43,8 @@
       <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/PipiPotiApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/PipiPotiApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/database/AppDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/database/AppDatabase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/database/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/domain/models/PipipotiEvento.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/database/AppDatabase.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/database/User.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/data/database/UserDao.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/navigation/NavGraph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/ui/navigation/NavGraph.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/ui/PipiPotiApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/com.iagogf.pipipoti/app/src/main/java/com/iagogf/pipipoti/PipiPotiApp.kt" afterDir="false" />
@@ -171,11 +175,11 @@
       <recent name="C:\Users\iagog\Desktop\DAM\2\Programacion Multimedia\com.iagogf.pipipoti\app\src\main\java\com\iagogf\pipipoti" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.iagogf.pipipoti.data.entity" />
       <recent name="com.iagogf.pipipoti.ui.navigation" />
       <recent name="com.iagogf.pipipoti.domain.models" />
       <recent name="com.iagogf.pipipoti.domain" />
       <recent name="com.iagogf.pipipoti.ui.viewmodels" />
-      <recent name="com.iagogf.pipipoti.ui.screens" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app.main">
