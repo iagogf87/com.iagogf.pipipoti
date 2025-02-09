@@ -1,18 +1,15 @@
 package com.iagogf.pipipoti
 
-import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
 import com.iagogf.pipipoti.data.sqlite.MelodyDBContract
 import com.iagogf.pipipoti.data.sqlite.MelodyDBHelper
-import com.iagogf.pipipoti.ui.PipiPotiApp
 import com.iagogf.pipipoti.ui.theme.PipipotiTheme
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 // Clase principal de la aplicación
 class MainActivity : ComponentActivity() {
 
@@ -110,12 +107,3 @@ class MainActivity : ComponentActivity() {
 }
 
 
-// Vista previa en el editor
-@Composable
-@Preview()
-@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
-private fun PreviewPipiPotiApp() {
-    PipipotiTheme() {
-        PipiPotiApp()
-    }
-}

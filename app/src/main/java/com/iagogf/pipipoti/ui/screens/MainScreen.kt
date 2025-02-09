@@ -8,22 +8,24 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.iagogf.pipipoti.R
 
 @Composable
-fun MainContent(
+fun MainScreen(
     modifier: Modifier = Modifier,
-    onNavigateToBath: () -> Unit, // Callback para navegar a BathScreen
-    onNavigateToEvento: () -> Unit, // Callback para navegar a EventoScreen
-    onNavigateToResumen: () -> Unit // Callback para navegar a ResumenScreen
+    onNavigateToBath: () -> Unit,
+    onNavigateToEvento: () -> Unit,
+    onNavigateToResumen: () -> Unit
 ) {
     LazyColumn(
         modifier = modifier
-            .fillMaxSize() // Ocupa el espacio disponible
-            .padding(16.dp) // Margen interno
+            .fillMaxSize() // Asegura que ocupe el espacio disponible
+            .padding(16.dp) // Margen interno para los elementos
+            .windowInsetsPadding(WindowInsets.statusBars) // Evita que quede detrás de la barra superior
     ) {
         item {
             // Texto de bienvenida
@@ -47,35 +49,23 @@ fun MainContent(
         }
 
         item {
-            // Botones de navegación
-
-            // Botón para "Ir al baño"
-            Button(
-                onClick = onNavigateToBath, // Navegar a BathScreen
-                modifier = Modifier.fillMaxWidth()
+            Box(
+                modifier = Modifier.fillMaxWidth(),
+                contentAlignment = Alignment.Center
             ) {
-                Text(text = "Ir al baño")
+                Button(
+                    onClick = onNavigateToBath,
+                    modifier = Modifier
+                        .fillMaxWidth(0.6f) // ✅ 60% del ancho
+                        .height(56.dp)
+                ) {
+                    Text(text = "Ir al baño", style = MaterialTheme.typography.bodyLarge)
+                }
             }
+        }
 
-            Spacer(modifier = Modifier.height(16.dp))
-
-            // Botón para "Añadir evento"
-            Button(
-                onClick = onNavigateToEvento, // Navegar a EventoScreen
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(text = "Añadir evento")
-            }
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            // Botón para "Ver registros"
-            Button(
-                onClick = onNavigateToResumen, // Navegar a ResumenScreen
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(text = "Ver registros")
-            }
+        item {
+            Spacer(modifier = Modifier.height(24.dp)) // Espaciado entre listas
         }
 
         item {

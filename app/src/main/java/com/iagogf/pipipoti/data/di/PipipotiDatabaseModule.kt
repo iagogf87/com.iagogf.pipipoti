@@ -2,8 +2,9 @@ package com.iagogf.pipipoti.data.di
 
 import android.content.Context
 import androidx.room.Room
+import com.iagogf.pipipoti.data.database.DogImageDao
 import com.iagogf.pipipoti.data.database.PipipotiDB
-import com.iagogf.pipipoti.data.database.PipipotiEventoDao
+import com.iagogf.pipipoti.data.database.EventoDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,6 +16,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object DatabaseModule {
 
+    //Proveer la base de datos única que maneja DogImage y Evento
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): PipipotiDB {
@@ -22,12 +24,21 @@ object DatabaseModule {
             context,
             PipipotiDB::class.java,
             "pipipoti_database"
-        ).build()
+        ).fallbackToDestructiveMigration(false)
+            .build()
     }
 
+    //Proveer el DAO de imágenes de perros
     @Provides
     @Singleton
-    fun provideEventoDao(database: PipipotiDB): PipipotiEventoDao {
+    fun provideDogImageDao(database: PipipotiDB): DogImageDao {
+        return database.dogImageDao()
+    }
+
+    //Proveer el DAO de eventos
+    @Provides
+    @Singleton
+    fun provideEventoDao(database: PipipotiDB): EventoDao {
         return database.eventoDao()
     }
 }

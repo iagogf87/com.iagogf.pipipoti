@@ -1,4 +1,4 @@
-package com.iagogf.pipipoti.domain.models
+package com.iagogf.pipipoti.data.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-@Entity(tableName = "PipipotiEventoEntity")
-data class PipipotiEventoEntity(
+@Entity(tableName = "EventoEntity")
+data class EventoEntity(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo(name = "fecha_hora") val fechaHora: String = obtenerFechaHoraActual(),
     @ColumnInfo(name = "tipo") val tipo: String, // "Pis" o "Caca"

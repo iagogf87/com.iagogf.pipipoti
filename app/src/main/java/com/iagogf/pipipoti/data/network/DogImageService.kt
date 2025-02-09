@@ -1,4 +1,8 @@
 package com.iagogf.pipipoti.data.network
 
-class DogImageService {
+import retrofit2.http.GET
+
+interface DogImageService {
+    @GET("breeds/image/random")
+    suspend fun getRandomImageDog(): DogImageResponse
 }

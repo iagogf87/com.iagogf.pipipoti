@@ -1,47 +1,34 @@
 package com.iagogf.pipipoti.ui.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.Share
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import kotlinx.coroutines.launch
+import androidx.navigation.NavController
+import com.iagogf.pipipoti.R
+import com.iagogf.pipipoti.ui.navigation.BottomNavBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PipiPotiScaffold(
-    drawerState: DrawerState, // Estado del menú lateral
-    content: @Composable (PaddingValues) -> Unit // Contenido principal
+    navController: NavController, //Pasamos el navController correctamente
+    onAddEvent: () -> Unit, //Callback para añadir evento
+    content: @Composable (PaddingValues) -> Unit
 ) {
-    val coroutineScope = rememberCoroutineScope() // Coroutine para manejar eventos suspendidos
-
     Scaffold(
         topBar = {
+            // Aquí definimos la TopAppBar que se ve en todas las pantallas
             TopAppBar(
                 title = {
                     Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center
                     ) {
-                        IconButton(onClick = {
-                            coroutineScope.launch { drawerState.open() } // Abre el menú lateral
-                        }) {
-                            Icon(
-                                imageVector = Icons.Default.Menu,
-                                contentDescription = "Abrir menú lateral",
-                                tint = MaterialTheme.colorScheme.onPrimary,
-                                modifier = Modifier.size(40.dp)
-                            )
-                        }
-
-                        Spacer(modifier = Modifier.padding(40.dp))
-
                         Column {
                             Text(
                                 text = "PipiPoti",
@@ -56,18 +43,21 @@ fun PipiPotiScaffold(
                         }
                     }
                 },
-                actions = {
-                    IconButton(onClick = { /* Acción para buscar */ }) {
-                        Icon(
-                            imageVector = Icons.Default.Search,
-                            contentDescription = "Icono Buscar",
-                            tint = MaterialTheme.colorScheme.onPrimary
+                navigationIcon = {
+                    IconButton(onClick = { /* No hace nada */ }) {
+                        Image(
+                            painter = painterResource(id = R.drawable.caca2),
+                            contentDescription = "Icono de caca",
+                            modifier = Modifier.size(40.dp)
                         )
                     }
-                    IconButton(onClick = { /* Acción para compartir */ }) {
+                },
+                actions = {
+                    IconButton(onClick = onAddEvent) { // Botón "+"
                         Icon(
-                            imageVector = Icons.Default.Share,
-                            contentDescription = "Icono Compartir",
+                            imageVector = Icons.Default.Add,
+                            contentDescription = "Añadir evento",
+                            modifier = Modifier.size(36.dp),
                             tint = MaterialTheme.colorScheme.onPrimary
                         )
                     }
@@ -77,19 +67,8 @@ fun PipiPotiScaffold(
                 )
             )
         },
-        bottomBar = {
-            BottomAppBar(
-                containerColor = MaterialTheme.colorScheme.primaryContainer
-            ) {
-                Text(
-                    text = "PipiPoti © 2025",
-                    modifier = Modifier
-                        .padding(16.dp)
-                        .fillMaxWidth(),
-                    style = MaterialTheme.typography.bodyMedium
-                )
-            }
-        },
-        content = content
+        bottomBar = { BottomNavBar(navController) }, // Barra inferior que se repite en todas las pantallas
+        content = content // Este es el contenido de cada pantalla que se pasa aquí
     )
 }
+

@@ -1,6 +1,6 @@
 package com.iagogf.pipipoti.data.repository
 
-import com.iagogf.pipipoti.data.database.PipipotiEventoDao
+import com.iagogf.pipipoti.data.database.EventoDao
 import com.iagogf.pipipoti.data.entity.EventoEntity
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -9,7 +9,7 @@ import javax.inject.Singleton
 
 @Singleton
 class EventoRepository @Inject constructor(
-    private val dao: PipipotiEventoDao
+    private val dao: EventoDao
 ) {
 
     suspend fun insertarEvento(evento: EventoEntity) {

@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 android {
@@ -41,10 +43,31 @@ android {
 }
 
 dependencies {
+//Room
+    implementation ("androidx.room:room-runtime:2.7.0-alpha01")
+    implementation ("androidx.room:room-ktx:2.7.0-alpha01")
+    kapt ("androidx.room:room-compiler:2.7.0-alpha01")
 
     implementation(libs.androidx.room.common)
     kapt(libs.androidx.room.compiler)
     testImplementation(libs.androidx.room.testing)
+//Hilt
+    kapt(libs.hilt.compiler)
+    implementation(libs.hilt.android)
+    implementation(libs.androidx.hilt.navigation.compose)
+//Viewmodel
+    implementation(libs.androidx.hilt.navigation.compose.v110)
+//Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.serialization.json.v160)
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
+    implementation(libs.coil.compose)
+
+    implementation (libs.logging.interceptor)
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.androidx.lifecycle.runtime.ktx.v261)
+    implementation (libs.androidx.hilt.navigation.compose.v100)
 
     implementation(libs.androidx.navigation.compose)
     implementation(libs.firebase.firestore.ktx)

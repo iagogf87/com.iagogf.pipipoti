@@ -1,4 +1,4 @@
-package com.iagogf.pipipoti.navigation
+package com.iagogf.pipipoti.ui.navigation
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
@@ -7,10 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.iagogf.pipipoti.ui.screens.MainContent
-import com.iagogf.pipipoti.ui.screens.LoginScreen
-import com.iagogf.pipipoti.ui.screens.RegisterScreen
-import com.iagogf.pipipoti.ui.screens.BathScreen
+import com.iagogf.pipipoti.ui.screens.*
 
 @Composable
 fun NavGraph(
@@ -19,29 +16,27 @@ fun NavGraph(
 ) {
     NavHost(
         navController = navController,
-        startDestination = "main"
+        startDestination = PipiPotiScreen.Main.route,
+        modifier = Modifier.padding(paddingValues)
     ) {
-        composable("main") {
-            MainContent(
-                modifier = Modifier.padding(paddingValues),
-                onNavigateToLogin = { navController.navigate("login") },
-                onNavigateToRegister = { navController.navigate("register") },
-                onNavigateToBath = { navController.navigate("bath") }
+        composable(PipiPotiScreen.Main.route) {
+            MainScreen(
+                onNavigateToBath = { navController.navigate(PipiPotiScreen.Bath.route) },
+                onNavigateToEvento = { navController.navigate(PipiPotiScreen.Evento.route) },
+                onNavigateToResumen = { navController.navigate(PipiPotiScreen.Resumen.route) }
             )
         }
-        composable("login") {
-            LoginScreen(
-                onLoginSuccess = { navController.popBackStack() },
-                onNavigateToRegister = { navController.navigate("register") }
+        composable(PipiPotiScreen.Bath.route) {
+            BathScreen(
+                onNavigateToEvento = { navController.navigate(PipiPotiScreen.Evento.route) }
             )
         }
-        composable("register") {
-            RegisterScreen(
-                onRegisterSuccess = { navController.popBackStack() }
-            )
+        composable(PipiPotiScreen.Evento.route) {
+            EventoScreen(navController)
         }
-        composable("bath") {
-            BathScreen() // Mostrar BathScreen
+        composable(PipiPotiScreen.Resumen.route) {
+            ResumenScreen(navController)
         }
     }
 }
+
