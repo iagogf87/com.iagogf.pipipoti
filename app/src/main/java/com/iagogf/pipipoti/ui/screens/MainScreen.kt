@@ -16,9 +16,9 @@ import com.iagogf.pipipoti.R
 @Composable
 fun MainContent(
     modifier: Modifier = Modifier,
-    onNavigateToLogin: () -> Unit, // Callback para navegar a LoginScreen
-    onNavigateToRegister: () -> Unit, // Callback para navegar a RegisterScreen
-    onNavigateToBath: () -> Unit // Callback para navegar a BathScreen
+    onNavigateToBath: () -> Unit, // Callback para navegar a BathScreen
+    onNavigateToEvento: () -> Unit, // Callback para navegar a EventoScreen
+    onNavigateToResumen: () -> Unit // Callback para navegar a ResumenScreen
 ) {
     LazyColumn(
         modifier = modifier
@@ -56,25 +56,25 @@ fun MainContent(
             ) {
                 Text(text = "Ir al baño")
             }
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth() // Ocupa el ancho disponible
-                    .padding(vertical = 16.dp),
-                horizontalArrangement = Arrangement.SpaceEvenly // Espaciado entre botones
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // Botón para "Añadir evento"
+            Button(
+                onClick = onNavigateToEvento, // Navegar a EventoScreen
+                modifier = Modifier.fillMaxWidth()
             ) {
-                Button(
-                    onClick = onNavigateToLogin // Navegar a LoginScreen
-                ) {
-                    Text(text = "Iniciar Sesión")
-                }
+                Text(text = "Añadir evento")
+            }
 
-                Spacer(modifier = Modifier.width(16.dp)) // Espacio entre botones
+            Spacer(modifier = Modifier.height(16.dp))
 
-                Button(
-                    onClick = onNavigateToRegister // Navegar a RegisterScreen
-                ) {
-                    Text(text = "Registrarse")
-                }
+            // Botón para "Ver registros"
+            Button(
+                onClick = onNavigateToResumen, // Navegar a ResumenScreen
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(text = "Ver registros")
             }
         }
 
@@ -119,4 +119,3 @@ fun MainContent(
         }
     }
 }
-
