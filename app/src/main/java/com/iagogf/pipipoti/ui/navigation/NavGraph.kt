@@ -21,9 +21,27 @@ fun NavGraph(
     ) {
         composable(PipiPotiScreen.Main.route) {
             MainScreen(
-                onNavigateToBath = { navController.navigate(PipiPotiScreen.Bath.route) },
-                onNavigateToEvento = { navController.navigate(PipiPotiScreen.Evento.route) },
-                onNavigateToResumen = { navController.navigate(PipiPotiScreen.Resumen.route) }
+                onNavigateToBath = {
+                    navController.navigate(PipiPotiScreen.Bath.route) {
+                        popUpTo(PipiPotiScreen.Main.route) { inclusive = true }
+                        launchSingleTop = true
+                        restoreState = false
+                    }
+                },
+                onNavigateToEvento = {
+                    navController.navigate(PipiPotiScreen.Evento.route) {
+                        popUpTo(PipiPotiScreen.Main.route) { inclusive = true }
+                        launchSingleTop = true
+                        restoreState = false//Borra la pila, pero mantiene MainScreen
+                    }
+                },
+                onNavigateToResumen = {
+                    navController.navigate(PipiPotiScreen.Resumen.route) {
+                        popUpTo(PipiPotiScreen.Main.route) { inclusive = true }
+                        launchSingleTop = true
+                        restoreState = false//Borra la pila, pero mantiene MainScreen
+                    }
+                }
             )
         }
         composable(PipiPotiScreen.Bath.route) {

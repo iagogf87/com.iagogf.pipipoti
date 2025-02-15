@@ -20,23 +20,22 @@ class DogImageViewModel @Inject constructor(
     val dogImageState: State<DogImageState> = _dogImageState
 
     init {
-        getDogImageAndUpdateState() // Se ejecuta al iniciar el ViewModel
+        getDogImageAndUpdateState()
     }
 
-    // Llamado al hacer clic en la imagen del perro
     fun onDogImageClicked() {
         getDogImageAndUpdateState()
     }
 
     // Obtiene la imagen (desde API o caché)
     private fun getDogImageAndUpdateState() {
-        viewModelScope.launch() {
+        viewModelScope.launch {
             _dogImageState.value = DogImageState.Loading
 
             val dogImage = getDogImageUseCase() // Llamamos al Use Case para obtener la imagen
 
             if (dogImage != null) {
-                _dogImageState.value = DogImageState.Success(dogImage.message) // Imagen obtenida
+                _dogImageState.value = DogImageState.Success(dogImage.message) // Imagen obtenida (API o caché)
             } else {
                 _dogImageState.value = DogImageState.Error("Error al obtener la imagen")
             }

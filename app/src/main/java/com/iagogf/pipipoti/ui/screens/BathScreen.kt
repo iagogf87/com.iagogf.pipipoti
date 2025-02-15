@@ -77,15 +77,6 @@ fun BathScreen(
         }
     }
 
-    // 🔹 Mueve el scroll **solo cuando cambia la imagen** y no antes
-    LaunchedEffect(dogImageState) {
-        if (imageClicked) {
-            val lastIndex = scrollState.layoutInfo.visibleItemsInfo.lastOrNull()?.index ?: 0
-            scrollState.animateScrollToItem(lastIndex, scrollOffset = 100) // 🔹 Offset evita cortes
-            imageClicked = false // 🔹 Evita que vuelva a scrollear en cada recomposición
-        }
-    }
-
     LazyColumn(
         state = scrollState,
         modifier = Modifier

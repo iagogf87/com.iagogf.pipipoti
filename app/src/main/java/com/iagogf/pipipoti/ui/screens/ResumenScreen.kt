@@ -38,7 +38,7 @@ fun ResumenScreen(
 
         // Lista de eventos con peso para empujar el botón hacia abajo
         Column(
-            modifier = Modifier.weight(1f) // ✅ Esto hace que la lista empuje el botón al fondo
+            modifier = Modifier.weight(1f) //Esto hace que la lista empuje el botón al fondo
         ) {
             if (eventos.isEmpty()) {
                 Text(
@@ -60,7 +60,7 @@ fun ResumenScreen(
 
         Spacer(modifier = Modifier.height(16.dp)) // Espaciado extra antes del botón
 
-        // 🔥 Botón abajo sin invadir la BottomBar
+        //Botón abajo para borrar los eventos sin invadir la BottomBar
         Button(
             onClick = {
                 viewModel.eliminarTodosLosEventos()
@@ -68,7 +68,7 @@ fun ResumenScreen(
             },
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(bottom = 8.dp) // ✅ Espaciado antes de la BottomBar
+                .padding(bottom = 8.dp) //Espaciado antes de la BottomBar
         ) {
             Text(text = "Borrar Historial")
         }
